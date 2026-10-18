@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obsidian Vault Backup</title>
+  <meta name="description" content="A personal, single-user backup tool that stores encrypted copies of the owner's Obsidian vaults in the owner's own Google Drive.">
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; padding: 2rem 1rem 4rem; max-width: 42rem; margin-inline: auto; font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    h1 { font-size: 1.8rem; margin-bottom: .25rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; }
+    nav a { margin-right: 1rem; }
+    footer { margin-top: 3rem; font-size: .9rem; opacity: .8; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Obsidian Vault Backup</h1>
+    <p>A personal backup tool used by its owner only.</p>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./privacy.html">Privacy policy</a>
+      <a href="./terms.html">Terms of service</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>What it does</h2>
+    <p>Obsidian Vault Backup is a script that runs on the owner's own computer. It takes regular snapshots of the owner's Obsidian note vaults, encrypts them with <a href="https://restic.net/">restic</a>, keeps one copy on the local disk, and uploads a second copy to the owner's own Google Drive using <a href="https://rclone.org/">rclone</a>.</p>
+
+    <h2>Who uses it</h2>
+    <p>One person: the owner of this site. The tool is not offered to anyone else, has no sign-up, and is not distributed as an app or extension. This page exists because Google requires a public home page and privacy policy for any application that connects to Google Drive, even a private one.</p>
+
+    <h2>How it connects to Google Drive</h2>
+    <ul>
+      <li>It uses Google's OAuth 2.0 to get permission from the owner's Google Account, once, on the owner's machine.</li>
+      <li>It only reads and writes inside backup folders in the owner's own Google Drive.</li>
+      <li>Everything it uploads is encrypted before it leaves the computer. Google Drive only ever holds encrypted files.</li>
+      <li>There is no server, website login, database, or third party involved in the backup process.</li>
+    </ul>
+
+    <h2>Source</h2>
+    <p>The tool is built from open-source software: <a href="https://restic.net/">restic</a> for encrypted snapshots and <a href="https://rclone.org/">rclone</a> for the Google Drive transfer. The owner's wrapper script and configuration are private and are not published.</p>
+  </main>
+
+  <footer>
+    <p>Contact: <a href="https://github.com/Tae-son">github.com/Tae-son</a></p>
+  </footer>
+</body>
+</html>
